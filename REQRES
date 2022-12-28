@@ -1,0 +1,146 @@
+#API Testing On reqres#
+URL `https://reqres.in`
+
+##GET##
+
+###To Fetch all User###
+get `/api/user`
+`Response- 200`
+
+to get all the user by default show page 1 user
+In "PARAMS" under "KEY" put "`page`" and "VALUE" as "`2`"
+`Response- 200`
+
+
+###To Fetch Specific User###
+
+get `/api/users/2`
+or
+`/api/users/:id`
+And in "PARAMS" in "VALUE" enter "`2`"
+
+`Response- 200`
+```
+{
+    "data": {
+        "id": 2,
+        "email": "janet.weaver@reqres.in",
+        "first_name": "Janet",
+        "last_name": "Weaver",
+        "avatar": "https://reqres.in/img/faces/2-image.jpg"
+    },
+    "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
+}
+```
+
+###Fetch Unlisted User###
+get `/api/users/23`
+only 12 User listed. 
+`Response- 404` "Not Found"
+```
+{}
+```
+
+###List<resource>###
+get `/api/unknown`
+`Response- 200`
+
+###Single<resource>###
+to get single details
+
+get `/api/unknown/2` or `/api/unknown/:id`  In "PARAMS" under "KEY" put "`page`" and "VALUE" as "`2`"
+`response- 200`
+```
+{
+    "data": {
+        "id": 2,
+        "name": "fuchsia rose",
+        "year": 2001,
+        "color": "#C74375",
+        "pantone_value": "17-2031"
+    },
+    "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
+}
+```
+
+
+##POST##
+Create User
+
+POST `/api/users`
+Enter below in "BODY" > "RAW" > "JSON" 
+```
+{
+    "name": "morpheus",
+    "job": "leader"
+}
+ ```
+ ```
+Response - 201 "Created"
+{
+    "name": "morpheus",
+    "job": "leader",
+    "id": "58",
+    "createdAt": "2022-12-28T11:05:47.048Z"
+}
+```
+
+##PUT##
+To Update
+PUT `/api/users/:id` or `/api/users/2`
+
+```
+{
+    "name": "morpheus",
+    "job": "zion resident"
+}
+ ```
+```
+Response- 200
+
+{
+    "name": "morpheus",
+    "job": "zion resident",
+    "updatedAt": "2022-12-28T11:25:13.772Z"
+}
+```
+
+##PATCH##
+To Update particular part
+PATCH `/api/users/:id` or `/api/users/2`
+
+```
+{
+    "name": "morpheus",
+    "job": "zion resident"
+}
+ ```
+```
+Response- 200
+
+{
+    "name": "morpheus",
+    "job": "zion resident",
+    "updatedAt": "2022-12-28T11:33:11.496Z"
+}
+```
+
+##DELETE##
+To remove data
+
+DELETE `/api/users/:id` or `/api/users/2`
+
+`Response- 204` "No Content"
+
+##POST##
+
+
+
+
+
