@@ -1,18 +1,18 @@
-#API Testing On reqrest#
+# API Testing On reqrest #
 URL `https://reqres.in`
 
-##GET##
+## GET ##
 
-###To Fetch all User###
+### To Fetch all User ###
 get `/api/user`
 `Response- 200`
 
 to get all the user by default show page 1 user
-In "PARAMS" under "KEY" put "`page`" and "VALUE" as "`2`"
+In "PARAMS" under "KEY" put `page` and "VALUE" as `2`
 `Response- 200`
 
 
-###To Fetch Specific User###
+### To Fetch Specific User ###
 
 get `/api/users/2`
 or
@@ -36,7 +36,7 @@ And in "PARAMS" in "VALUE" enter "`2`"
 }
 ```
 
-###Fetch Unlisted User###
+### Fetch Unlisted User ###
 get `/api/users/23`
 only 12 User listed. 
 `Response- 404` "Not Found"
@@ -44,11 +44,11 @@ only 12 User listed.
 {}
 ```
 
-###List<resource>###
+### List<resource> ###
 get `/api/unknown`
 `Response- 200`
 
-###Single<resource>###
+### Single<resource> ###
 to get single details
 
 get `/api/unknown/2` or `/api/unknown/:id`  In "PARAMS" under "KEY" put "`page`" and "VALUE" as "`2`"
@@ -70,8 +70,8 @@ get `/api/unknown/2` or `/api/unknown/:id`  In "PARAMS" under "KEY" put "`page`"
 ```
 
 
-##POST##
-Create User
+## POST ##
+** Create User **
 
 POST `/api/users`
 Enter below in "BODY" > "RAW" > "JSON" 
@@ -91,7 +91,7 @@ Response - 201 "Created"
 }
 ```
 
-##PUT##
+## PUT ##
 To Update
 PUT `/api/users/:id` or `/api/users/2`
 
@@ -111,7 +111,7 @@ Response- 200
 }
 ```
 
-##PATCH##
+## PATCH ##
 To Update particular part
 PATCH `/api/users/:id` or `/api/users/2`
 
@@ -131,16 +131,16 @@ Response- 200
 }
 ```
 
-##DELETE##
+## DELETE ##
 To remove data
 
 DELETE `/api/users/:id` or `/api/users/2`
 
 `Response- 204` "No Content"
 
-##POST##
+## POST ##
 
-###Registration Succeessful###
+### Registration Succeessful ###
 POST `/api/register`
 ```
 {
@@ -156,7 +156,7 @@ Response- 200
     "token": "QpwL5tke4Pnpja7X4"
 }
 ```
-###Registration Unsuccessful###
+### Registration Unsuccessful ###
 POST `/api/register`
 ```
 {
@@ -170,7 +170,7 @@ Response- 400
     "error": "Missing password"
 }
 ```
-###Login Successful###
+### Login Successful ###
 POST `/api/login`
 ```
 {
@@ -186,7 +186,7 @@ Response- 200
 }
 '''
 
-###Login UnSuccessful###
+### Login UnSuccessful ###
 POST `/api/login`
 ```
 {
@@ -200,7 +200,7 @@ Response- 400
 }
 ```
 
-##Delay Response##
+## Delay Response ##
 GET `/api/users?delay=3`
 
 Will Show user in delay/last.
