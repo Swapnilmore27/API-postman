@@ -1,4 +1,4 @@
-#API Testing On reqres#
+#API Testing On reqrest#
 URL `https://reqres.in`
 
 ##GET##
@@ -140,7 +140,68 @@ DELETE `/api/users/:id` or `/api/users/2`
 
 ##POST##
 
+###Registration Succeessful###
+POST `/api/register`
+```
+{
+    "email": "eve.holt@reqres.in",
+    "password": "pistol"
+}
+```
+```
+Response- 200
 
+{
+    "id": 4,
+    "token": "QpwL5tke4Pnpja7X4"
+}
+```
+###Registration Unsuccessful###
+POST `/api/register`
+```
+{
+    "email": "sydney@fife"
+}
+ ```
+ ```
+Response- 400
 
+{
+    "error": "Missing password"
+}
+```
+###Login Successful###
+POST `/api/login`
+```
+{
+    "email": "eve.holt@reqres.in",
+    "password": "cityslicka"
+}
+```
+```
+Response- 200
 
+{
+    "token": "QpwL5tke4Pnpja7X4"
+}
+'''
+
+###Login UnSuccessful###
+POST `/api/login`
+```
+{
+    "email": "peter@klaven"
+}
+ ```
+Response- 400
+
+{
+    "error": "Missing password"
+}
+```
+
+##Delay Response##
+GET `/api/users?delay=3`
+
+Will Show user in delay/last.
 
